@@ -1,0 +1,25 @@
+html{
+	font-size: 62.5%;	/*Se hace esto para qu 1 rem es igual a 16 pixel, 
+						ese porcentaje facilita su uso, de esta manera,
+						1rem serian 10 pixels
+						*/
+}
+
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: $m-size;
+}
+
+button{
+	cursor: pointer;
+}
+
+button:disabled{
+	cursor: default;
+}
+
+.is-active{
+	font-weight: bold;
+}
+

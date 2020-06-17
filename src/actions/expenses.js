@@ -7,7 +7,8 @@ export const addExpense = ({description = '',note='', amount=0, createdAt=0} = {
 	expense: {
 		id: uuidv4(),
 		description,
-		note, amount,
+		note, 
+		amount,
 		createdAt
 	}
 });

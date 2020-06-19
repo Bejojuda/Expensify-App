@@ -44,7 +44,7 @@ store.dispatch(addExpense({
 }));
 
 
-store.dispatch(setTextFilter('gas'));
+//store.dispatch(setTextFilter('gas'));
 
 const visibleExpenses = getVisibleExpenses(store.getState().expenses, store.getState().filters);
 

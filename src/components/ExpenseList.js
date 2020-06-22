@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';			//Permite conectarse al store
 import ExpenseListItem  from './ExpenseListItem';
+import ExpensesSummary from './ExpensesSummary';
 import selectExpenses from '../selectors/expenses';
+import selectExpensesTotal from '../selectors/expenses-total.js';
+import numeral from 'numeral';
 
 const ExpenseList = (props) => (
 	<div>
+		
 		<h1>Expense List</h1>
+		<ExpensesSummary />
 		{
 			props.expenses.map((expense) => 
 				<ExpenseListItem 

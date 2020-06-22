@@ -1,7 +1,4 @@
 node_modules/
-public/bundle.js
-test/
-public/bundle.js.map
-public/main.css
-public/main.css.map
 src/playground/buildit/
+public/dist/
+test/

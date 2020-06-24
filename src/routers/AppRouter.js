@@ -7,6 +7,7 @@ import EditExpensePage from '../components/EditExpensePage';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
+import { LoginPage } from '../components/LoginPage';
 
  
 const AppRouter = () => (
@@ -19,7 +20,8 @@ const AppRouter = () => (
 
 						{/*El path solo mira si la ruta indicada por lo menos empieza con lo experado
 						   Si se quiere que solo se ejecute cuando la ruta sea exactamente igual, se hace exact = true*/}
-				<Route path="/" component={ExpenseDashboardPage} exact={true}/>	{/*Cada Route es una ruta que se desea establecer*/}
+				<Route path="/" component={LoginPage} exact={true}/>
+				<Route path="/dashboard" component={ExpenseDashboardPage}/>	{/*Cada Route es una ruta que se desea establecer*/}
 				<Route path="/create" component={AddExpensePage}/>
 				{/*id toma el valor dinamico que se manda luego de edit*/}
 				<Route path="/edit/:id" component={EditExpensePage}/>

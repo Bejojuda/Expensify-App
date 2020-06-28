@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startLogIn } from '../actions/auth';
+import { startLogin } from '../actions/auth';
 
-export const LoginPage = ({ startLogIn }) => (
+export const LoginPage = ({ startLogin }) => (
 	<div>
-		<button onClick={startLogIn}>Log In</button>
+		<button onClick={startLogin}>Log In</button>
 	</div>
 );
 
 const mapDispatchToProps = (dispatch) => ({
-	startLogIn: () => dispatch(startLogIn)
+	startLogin: () => dispatch(startLogin())
 });
 
-export default connect(mapDispatchToProps)(LoginPage);
+//El primer argumento es mapStateToProps, por eso se pone undefined
+export default connect(undefined, mapDispatchToProps)(LoginPage);

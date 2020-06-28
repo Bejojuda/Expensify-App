@@ -6,10 +6,10 @@ import { createBrowserHistory } from 'history';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
-import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
-import PrivateRoute from './PrivateRoute.js'
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const history = createBrowserHistory();	//Permite redireccionar manualmente
 
@@ -24,12 +24,11 @@ const AppRouter = () => (
 
 						{/*El path solo mira si la ruta indicada por lo menos empieza con lo experado
 						   Si se quiere que solo se ejecute cuando la ruta sea exactamente igual, se hace exact = true*/}
-				<Route exact path="/" component={LoginPage} />
+				<PublicRoute exact path="/" component={LoginPage} />
 				<PrivateRoute exact path="/dashboard" component={ExpenseDashboardPage}/>	{/*Cada Route es una ruta que se desea establecer*/}
 				<PrivateRoute exact path="/create" component={AddExpensePage}/>
 				{/*id toma el valor dinamico que se manda luego de edit*/}
 				<PrivateRoute exact path="/edit/:id" component={EditExpensePage}/>
-				<Route exact path="/help" component={HelpPage}/>
 				<Route component={NotFoundPage}/>
 			</Switch>
 

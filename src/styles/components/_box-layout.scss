@@ -1,0 +1,24 @@
+.box-layout {
+	align-items: center;
+	//ulr(), al ser ejecutado por el navegador, toma como folder base public
+	//por lo cual '/'' ya referencia a ese folder
+	background: url('/images/bg.jpg');
+	display: flex;
+	background-size: cover; 		//Se asegura que la imagen cubra el contenedor en donde se encuentra
+	height: 100vh;		//vh es viewport height, y el número representa el porcentaje que se de lo que cubrirá el height 
+	justify-content: center;
+	width: 100vw;		//vw es viewport width
+}
+
+.box-layout__box {
+	background: fade-out(white, .30);		//Se hace un fade out 15% de blanco
+	border-radius: 3px;
+	padding: $l-size $m-size;	//Espacio entre contenido y los bordes, large vertial, medium horizontal
+	text-align: center;
+	width: 25rem;
+}
+
+.box-layout__title {
+	margin: 0 0 $m-size 0;
+	line-height: 1;
+}

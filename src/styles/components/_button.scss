@@ -1,0 +1,15 @@
+.button {
+	background: $blue;
+	border: none;
+	color: white;
+	display: inline-block;				//Permite que se aplique el margin
+	font-size: $font-size-large;
+	font-weight: 300;
+	line-height: 1;
+	padding: $m-size $s-size;
+	text-decoration: none;			//Quita el subrayado al Link
+}
+
+.button--link {
+	background: none;
+}

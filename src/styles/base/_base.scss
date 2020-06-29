@@ -1,3 +1,8 @@
+* {
+	box-sizing: border-box;			//Importante, permite que el height indicado a algunos componentes
+									//se apliquen correctamente (ej: text-input en inputs)
+}
+
 html{
 	font-size: 62.5%;	/*Se hace esto para qu 1 rem es igual a 16 pixel, 
 						ese porcentaje facilita su uso, de esta manera,
@@ -7,8 +12,10 @@ html{
 
 
 body {
+	color: $dark-grey;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: $m-size;
+	line-height: 1.6;
 }
 
 button{

@@ -17,7 +17,6 @@ export const startLogin = () =>{
 
 export const startLogout = () =>{
 	return () =>{
-		console.log('Log out')
 		return firebase.auth().signOut();
 	};
 }

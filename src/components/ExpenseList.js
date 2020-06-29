@@ -8,9 +8,6 @@ import numeral from 'numeral';
 
 const ExpenseList = (props) => (
 	<div>
-		
-		<h1>Expense List</h1>
-		<ExpensesSummary />
 		{
 			props.expenses.map((expense) => 
 				<ExpenseListItem 

@@ -1,8 +1,15 @@
 //Colors
+$blue: #1c88bf;
+$dark-blue: #364051;
+$dark-grey: #333;
+
+//Font sizes
+$font-size-large: 1.8rem;
 
 //spacing
 $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
-$desktop-breakpoint: 45rem;
+$desktop-breakpoint: 45rem;	//Variable que determina el limite para que los componentes
+							//Se empiecen a posicionar de manera vertical

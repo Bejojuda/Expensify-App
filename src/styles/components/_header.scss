@@ -1,0 +1,19 @@
+.header {
+	background: $dark-blue;
+}
+
+.header__content{
+	align-items: center;					//Centra vertical
+	display: flex;
+	justify-content: space-between;			//Hace que las cosas de ponga una en cada lado
+	padding: $s-size 0;
+}	
+
+.header__title {
+	color: white;
+	text-decoration: none;			//Le quita el subrayado a los links
+	h1 {					//Hace target a todos los h1
+		margin: 0;
+
+	}
+}

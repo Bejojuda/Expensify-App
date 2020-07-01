@@ -1,0 +1,71 @@
+.list-header {
+	background: $off-white;
+	border: 1px solid darken($off-white, 7%);
+	color: $grey;
+	display: flex;
+	justify-content: space-between;
+	padding: $s-size $m-size;
+}
+
+.list-body {
+	margin-bottom: $m-size;
+	@media (min-width: $desktop-breakpoint) {
+		margin-bottom: $l-size;
+	}
+}
+
+.list-item {
+	border: 1px solid darken($off-white, 7%);
+	border-top: none;		//Se quita el borde arriba para que no se combine con el siguiente
+							//item y termine siendo borde 2 pixel
+	color: $dark-grey;
+	display: flex;
+	flex-direction: column;
+	padding: $s-size;
+	text-decoration: none;
+
+	transition: background .3s ease;  //Permite indicar una trancision al background, tome .3s y con el efecto ease
+									  //Funciona de la mano con :hove
+
+	//& referencia al propio .list-item, es por eso que esto es lo mismo que
+	//lo que .list-item:hover
+	&:hover { 		//hover permite hacer algo cuando ¿el cursor está encima del elemento?
+		background: $off-white;
+	}
+
+	@media (min-width: $desktop-breakpoint) {
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: $m-size;
+	}
+}
+
+.list-item--message {
+	align-items: center;
+	color: $grey;
+	justify-content: center;
+	padding: $m-size;
+
+	&:hover {
+		background: none;
+	}
+}
+
+.list-item__title{
+	margin: 0;
+	word-break: break-all;			//Rompe las palabras super largas
+}
+
+.list-item__sub-title {
+	color: $grey;
+	font-size: $font-size-small;
+}
+
+.list-item__data {
+	margin: $s-size 0 0 0;
+	@media (min-width: $desktop-breakpoint) {
+		margin: 0;
+		padding-left: $s-size;
+	}
+}

@@ -73,44 +73,46 @@ export default class ExpenseForm extends React.Component {
 
 	render(){
 		return (
-			<div>
-				{this.state.error && <p>{this.state.error}</p>}
-				<form onSubmit={this.onSubmit}>
-					<input 
-						className="text-input"
-						type="text"
-						placeholder="Description"
-						autoFocus
-						value={this.state.description}
-						onChange={this.onDescriptionChange}
-					/>
-					<input
-						className="text-input"
-						type="text"
-						placeholder="Amount"
-						value={this.state.amount}
-						onChange={this.onAmountChange}
+			<form className="form" onSubmit={this.onSubmit}>
+				{this.state.error && <p className="form__error">{this.state.error}</p>}
+				<input 
+					className="text-input"
+					type="text"
+					placeholder="Description"
+					autoFocus
+					value={this.state.description}
+					onChange={this.onDescriptionChange}
+				/>
+				<input
+					className="text-input"
+					type="text"
+					placeholder="Amount"
+					value={this.state.amount}
+					onChange={this.onAmountChange}
 
-					/>
-					<SingleDatePicker
-						date={this.state.createdAt}
-						onDateChange={this.onDateChange}
-						focused={this.state.calendarFocused}
-						onFocusChange={this.onFocusChange}
-						numberOfMonths={1}				//Muestra 1 mes a la vez
-						isOutsideRange={() => false}	//Permite seleccionar dias en el pasado
+				/>
+				<SingleDatePicker
+					date={this.state.createdAt}
+					onDateChange={this.onDateChange}
+					focused={this.state.calendarFocused}
+					onFocusChange={this.onFocusChange}
+					numberOfMonths={1}				//Muestra 1 mes a la vez
+					isOutsideRange={() => false}	//Permite seleccionar dias en el pasado
 
-					/>
-					<textarea
-						className="textarea"
-						placeholder="Agregar nota para el expense (opcional)"
-						onChange={this.onNoteChange}
-						value={this.state.note}
+				/>
+				<textarea
+					className="textarea"
+					placeholder="Agregar nota para el expense (opcional)"
+					onChange={this.onNoteChange}
+					value={this.state.note}
 					>
-					</textarea>
-					<button>{this.state.action} </button>
-				</form>
-			</div>
+				</textarea>
+
+				<div>		{/*Los estilos del partial form solo se aplican a los hijos directos*/}
+							{/*Al poner en un div a button, ya no es hijo directo, por lo cual permite aplicar su propios estilos*/}
+					<button className="button">{this.state.action} </button>
+				</div>
+			</form>
 		);
 	}
 }

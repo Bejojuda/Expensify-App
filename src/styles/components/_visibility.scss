@@ -1,0 +1,11 @@
+.show-for-mobile {						//Se encarga de mostrar solo cuando es en mobile
+	@media (min-width: $desktop-breakpoint) {
+		display: none;
+	}
+}
+
+.show-for-desktop {						//Solo se muestra cuando es en desktop
+	@media (max-width: $desktop-breakpoint - .01rem) {
+		display: none;
+	}
+}

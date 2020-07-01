@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';	
 //import IndecisionApp from './components/IndecisionApp';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';	
 import { firebase } from'./firebase/firebase';
-
+import LoadingPage from './components/LoadingPage';
 
 						
 //Store permite manejar datos entre componentes del frontend
@@ -35,7 +35,9 @@ const renderApp = () =>{
 	}
 }
 
-ReactDOM.render(<p>Cargando...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+
+
 
 
 firebase.auth().onAuthStateChanged((user) =>{
@@ -52,6 +54,8 @@ firebase.auth().onAuthStateChanged((user) =>{
 		renderApp();
 	}
 });
+
+
 //Se ejecuta en cada dispatch que se hace
 /*store.subscribe(()=>{
 	const state = store.getState();
